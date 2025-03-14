@@ -1,13 +1,13 @@
 # ⚡ Smart Home Energy Management System  
 
 ## 📜 Project Overview  
-The **Smart Home Energy Management System** is a scalable and modular platform designed to monitor, analyze, and optimize energy consumption efficiently. Built with a **microservices architecture**, the system provides **real-time energy data**, **detailed analytics**, and **automated notifications** to help users manage energy usage effectively.  
+The **Smart Home Energy Management System** is a scalable,serverless and modular platform designed to monitor, analyze, and optimize energy consumption efficiently. Built with a hybrid **microservices and serverless architecture**, the system provides **real-time energy data**, **detailed analytics**, and **automated notifications** to help users manage energy usage effectively.  
 
 ## 🚀 Features  
 - **Real-time energy monitoring** with REST APIs.  
 - **Energy consumption analytics** for insights and optimization.  
-- **Automated notifications** for usage alerts and efficiency tips.  
-- **User authentication** with JWT-based security.  
+- **Automated notifications** for usage alerts and efficiency tips using AWS Lambda.  
+- **User authentication** with JWT-based security(Lambda).  
 - **Microservices architecture** for modularity and scalability.  
 - **Docker & Kubernetes** for seamless deployment.  
 
@@ -15,7 +15,8 @@ The **Smart Home Energy Management System** is a scalable and modular platform d
 ## 🛠 Tech Stack  
 
 ### **Backend**  
-- **Node.js & Express.js** – Microservices-based REST APIs.  
+- **Node.js & Express.js** – Microservices-based REST APIs.
+- **AWS Lambda & API Gateway** – Serverless authentication & analytics.
 - **PostgreSQL** – Relational database for structured data.  
 - **JWT Authentication** – Secure user authentication.  
 
@@ -26,7 +27,8 @@ The **Smart Home Energy Management System** is a scalable and modular platform d
 ### **Deployment & Orchestration**  
 - **Docker** – Containerization of microservices.  
 - **Kubernetes** – Automated deployment and scaling.  
-- **Nginx** – Reverse proxy for efficient request handling.  
+- **Nginx** – Reverse proxy for efficient request handling.
+- **AWS Lambda & API Gateway** – Serverless backend components.
 
 ## 🔧 Setup & Installation  
 
@@ -47,11 +49,16 @@ JWT_SECRET=your_secret_key
 ```
 REACT_APP_API_URL=http://localhost:8080
 ```
-### **3️⃣ Run with Docker Compose (Local Development)**  
+### **3️⃣ Deploy AWS Lambda Functions**  
+```
+cd lambda/
+serverless deploy
+```
+### **4️⃣ Run Microservices with Docker Compose (Local Development)**  
 ```
 docker-compose up --build
 ```
-### **4️⃣ Deploy on Kubernetes (Production Setup)**  
+### **5️⃣ Deploy on Kubernetes (Production Setup)**  
 ```
 kubectl apply -f k8s/
 kubectl get pods
