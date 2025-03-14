@@ -1,0 +1,43 @@
+service: energy-monitoring
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  environment:
+    JWT_SECRET: your_secret_key
+
+functions:
+  register:
+    handler: auth/register.handler
+    events:
+      - http:
+          path: auth/register
+          method: post
+
+  login:
+    handler: auth/login.handler
+    events:
+      - http:
+          path: auth/login
+          method: post
+
+  fetchEnergyData:
+    handler: energy/fetchData.handler
+    events:
+      - http:
+          path: energy/data
+          method: get
+
+  generateReport:
+    handler: analytics/generateReport.handler
+    events:
+      - http:
+          path: analytics/report
+          method: get
+
+  sendAlert:
+    handler: notifications/sendAlert.handler
+    events:
+      - http:
+          path: notifications/alerts
+          method: get
