@@ -1,72 +1,76 @@
-# 🔋 Smart Home Energy Monitoring System  
+# ⚡ Smart Home Energy Management System  
 
 ## 📜 Project Overview  
-This project is a **Smart Home Energy Monitoring System** that allows users to track and analyze their household energy consumption in real-time. The system provides interactive graphs, budget alerts, and secure authentication using OAuth 2.0.  
+The **Smart Home Energy Management System** is a scalable and modular platform designed to monitor, analyze, and optimize energy consumption efficiently. Built with a **microservices architecture**, the system provides **real-time energy data**, **detailed analytics**, and **automated notifications** to help users manage energy usage effectively.  
 
 ## 🚀 Features  
-- **Real-time energy monitoring** via IoT devices (or simulated data).  
-- **Energy consumption visualization** using interactive graphs (Line, Bar charts).  
-- **Budget alerts** when energy usage exceeds predefined limits.  
-- **User authentication** with OAuth 2.0.  
-- **Scalability & security** using Kubernetes, Docker, and Spring Boot.  
+- **Real-time energy monitoring** with REST APIs.  
+- **Energy consumption analytics** for insights and optimization.  
+- **Automated notifications** for usage alerts and efficiency tips.  
+- **User authentication** with JWT-based security.  
+- **Microservices architecture** for modularity and scalability.  
+- **Docker & Kubernetes** for seamless deployment.  
 
-## 🛠️ Tech Stack  
-- **Frontend:** ReactJS, Chart.js, Material UI  
-- **Backend:** Java Spring Boot, PostgreSQL  
-- **IoT Platform:** AWS IoT Core (or simulated data)  
-- **Deployment:** Docker, Kubernetes (k8s)  
 
----
+## 🛠 Tech Stack  
 
-## 📐 **Design Choices**  
+### **Backend**  
+- **Node.js & Express.js** – Microservices-based REST APIs.  
+- **PostgreSQL** – Relational database for structured data.  
+- **JWT Authentication** – Secure user authentication.  
 
-### **1️⃣ Frontend (ReactJS)**  
-- **Why React?** ⚛️ React provides a modular component-based structure, making the UI dynamic and interactive.  
-- **Why Chart.js?** 📊 Lightweight, easy to integrate, and provides smooth real-time data visualization.  
-- **Why Material UI?** 🎨 Ensures a responsive and visually appealing UI.  
+### **Frontend**  
+- **React.js** – Modern frontend with reusable components.  
+- **Redux** – State management for better UI control.  
 
-### **2️⃣ Backend (Spring Boot)**  
-- **Why Spring Boot?** ☕ Simplifies REST API development, provides built-in security, and integrates well with databases.  
-- **Why PostgreSQL?** 🗄️ Ensures **data consistency**, supports **time-series data**, and is well-suited for handling energy consumption records.  
+### **Deployment & Orchestration**  
+- **Docker** – Containerization of microservices.  
+- **Kubernetes** – Automated deployment and scaling.  
+- **Nginx** – Reverse proxy for efficient request handling.  
 
-### **3️⃣ Authentication (OAuth 2.0)**  
-- **Why OAuth 2.0?** 🔐 Ensures **secure user authentication** by allowing third-party identity providers like Google/Facebook.  
+## 🔧 Setup & Installation  
 
-### **4️⃣ Deployment (Docker & Kubernetes)**  
-- **Why Docker?** 🐳 Containerization ensures consistent environments across development, testing, and production.  
-- **Why Kubernetes?** ☁️ Allows automatic scaling, load balancing, and easy management of microservices.  
-
----
-
-## ⚠️ **Challenges Faced**  
-1️⃣ **Real-Time Data Handling**  
-   - Simulating energy consumption data was a challenge. We used a **Node.js script** to generate IoT-like data for testing.  
-2️⃣ **Integrating OAuth 2.0**  
-   - Setting up OAuth authentication with **Spring Security** required configuring authorization flows properly.  
-3️⃣ **Kubernetes Configurations**  
-   - Defining proper `Deployment`, `Service`, and `Ingress` YAML files for k8s took time.  
-
----
-
-## 🚀 **How to Run the Project**  
-
-# 1️⃣ Clone the Repository
-git clone https://github.com/Karanmangtani23/smart-energy-monitoring.git <br>
-cd smart-energy-monitoring
-
-# 2️⃣ Setup Backend (Spring Boot)
-cd backend
-mvn clean install<br>
-mvn spring-boot:run<br>
-
-# 3️⃣ Setup Frontend (ReactJS)
-cd ../frontend
-npm install<br>
-npm start<br>
-
-# 4️⃣ Run with Docker
-cd ..
-docker-compose up --build<br>
-
-# 5️⃣ Deploy on Kubernetes
+### **1️⃣ Clone the Repository**  
+```sh
+git clone https://github.com/Karanmangtani23/Smart-Home-Energy-Monitoring.git
+cd energy-management-system
+```
+### **2️⃣ Environment Variables**  
+- Create .env files in the required directories.
+- Backend .env
+```sh
+PORT=5000
+DATABASE_URL=postgres://user:password@database:5432/energy_db
+JWT_SECRET=your_secret_key
+```
+- Frontend.env
+```
+REACT_APP_API_URL=http://localhost:8080
+```
+### **3️⃣ Run with Docker Compose (Local Development)**  
+```
+docker-compose up --build
+```
+### **4️⃣ Deploy on Kubernetes (Production Setup)**  
+```
 kubectl apply -f k8s/
+kubectl get pods
+```
+
+## 🌐 API Endpoints  
+
+| Endpoint               | Method | Description                     |
+|------------------------|--------|---------------------------------|
+| `/auth/register`       | POST   | Register new user              |
+| `/auth/login`          | POST   | User login (JWT)               |
+| `/energy/data`         | GET    | Fetch energy usage data        |
+| `/analytics/report`    | GET    | Generate energy reports        |
+| `/notifications/alerts`| GET    | Fetch user notifications       |
+
+---
+
+## 💡 Challenges Faced  
+
+- Ensuring seamless **microservices communication** using **API Gateway**.  
+- **Database migrations and seeders** for structured data storage.  
+- **Kubernetes service orchestration** for scalability and fault tolerance.  
