@@ -9,7 +9,8 @@ The **Smart Home Energy Management System** is a scalable,serverless and modular
 - **Automated notifications** for usage alerts and efficiency tips using AWS Lambda.  
 - **User authentication** with JWT-based security(Lambda).  
 - **Microservices architecture** for modularity and scalability.  
-- **Docker & Kubernetes** for seamless deployment.  
+- **Docker & Kubernetes** for seamless deployment.
+- **Predictive energy usage forecasts** using machine learning (LSTM model).
 
 
 ## 🛠 Tech Stack  
