@@ -11,6 +11,8 @@ The **Smart Home Energy Management System** is a scalable,serverless and modular
 - **Microservices architecture** for modularity and scalability.  
 - **Docker & Kubernetes** for seamless deployment.
 - **Predictive energy usage forecasts** using machine learning (LSTM model).
+- **Voice Assistant Integration** (Google Assistant & Alexa) for hands-free energy monitoring.
+- **Gamification & Leaderboard System** to encourage energy conservation.
 
 
 ## 🛠 Tech Stack  
@@ -19,11 +21,13 @@ The **Smart Home Energy Management System** is a scalable,serverless and modular
 - **Node.js & Express.js** – Microservices-based REST APIs.
 - **AWS Lambda & API Gateway** – Serverless authentication & analytics.
 - **PostgreSQL** – Relational database for structured data.  
-- **JWT Authentication** – Secure user authentication.  
+- **JWT Authentication** – Secure user authentication.
+- **Machine Learning** (TensorFlow/Keras, Scikit-Learn) – Predictive energy usage analysis.
 
 ### **Frontend**  
 - **React.js** – Modern frontend with reusable components.  
-- **Redux** – State management for better UI control.  
+- **Redux** – State management for better UI control.
+- **Dialogflow & Alexa Skills Kit** – Voice assistant integration.
 
 ### **Deployment & Orchestration**  
 - **Docker** – Containerization of microservices.  
@@ -74,6 +78,8 @@ kubectl get pods
 | `/energy/data`         | GET    | Fetch energy usage data        |
 | `/analytics/report`    | GET    | Generate energy reports        |
 | `/notifications/alerts`| GET    | Fetch user notifications       |
+| `/rewards`            | POST   | Add user energy-saving points  |
+| `/leaderboard`        | GET    | Get leaderboard data           |
 
 ---
 
@@ -81,4 +87,6 @@ kubectl get pods
 
 - Ensuring seamless **microservices communication** using **API Gateway**.  
 - **Database migrations and seeders** for structured data storage.  
-- **Kubernetes service orchestration** for scalability and fault tolerance.  
+- **Kubernetes service orchestration** for scalability and fault tolerance.
+- **Integrating voice assistants** to fetch and process energy data.
+- **Building an engaging gamification system** for energy conservation.
